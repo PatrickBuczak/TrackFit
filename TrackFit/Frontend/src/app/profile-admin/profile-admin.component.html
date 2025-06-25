@@ -1,0 +1,49 @@
+<br>
+<div class="container">
+  <div class="container-userinfo">
+    <!-- Linke Spalte: Benutzerinformationen -->
+    <div class="left-column">
+      <div class="text-row">
+        <div class="container-text">Rolle: </div>
+        <div class="container-text3">Administrator</div>
+      </div>
+      <div class="text-row">
+        <div class="container-text">Benutzername: </div>
+        <div class="container-text3">{{ this.userLoad.username }}</div>
+      </div>
+      <div class="text-row">
+        <div class="container-text">Vorname: </div>
+        <div class="container-text3">{{ this.userLoad.firstname }}</div>
+      </div>
+      <div class="text-row">
+        <div class="container-text">Nachname: </div>
+        <div class="container-text3">{{ this.userLoad.lastname }}</div>
+      </div>
+      <div class="text-row">
+        <div class="container-text">E-Mail-Adresse: </div>
+        <div class="container-text3">{{ this.userLoad.email }}</div>
+      </div>
+    </div>
+
+    <!-- Rechte Spalte: Profilbild -->
+    <div class="right-column">
+      <div class="text-row">
+        <div class="container-text-profilbild">Profilbild: </div>
+      </div>
+      <img id="profilbild" alt="Profilbild">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-gap"></div>
+
+
+
+<button class="logout-button" (click)="logout()">Abmelden</button>
+<p></p>
+<br>
+<br>
+<br>
+<app-navbar-admin></app-navbar-admin>

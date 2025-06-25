@@ -1,0 +1,150 @@
+<div class="SocialFeed">
+  <!-- Titel und Hinweis für Markierungen (Farben) - oben auf der Seite -->
+  <div class="info-text-container">
+    <div class="container">
+      <div class="container-text6">Timeline (Social Feed): </div>
+    </div>
+    <div class="container-text2">In dieser Übersicht werden die 15 zuletzt hochgeladenen und für Sie sichtbaren Aktivitäten in Leserichtung angezeigt – sowohl von anderen Nutzern als auch Ihre eigenen.
+      <br>
+      <br>
+      <div class = "markierungen">
+        <!-- Durch spann können Teile des Textes gruppiert werden und dadurch -->
+        <!-- andere Styles verwendet werden-->
+        <!-- non-breacking-space leerzeichen aber ohne dass umbrüche möglich sind-->
+        <!-- mehrere Leerzeichen werden halt gerne zu einem gemacht von html-->
+        <!-- dadurch kann dies verhindert werden-->
+        <span class="marker-info-green"></span>&nbsp;&nbsp;nur für Freunde sichtbare Aktiviäten&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="marker-info-yellow"></span>&nbsp;&nbsp;nur für den Ersteller sichtbare Aktivitäten&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="marker-info-darkblue"></span>&nbsp;&nbsp;für alle Benutzer sichtbare Aktivitäten
+      </div>
+      <br>
+      Hinweis: &nbsp;&nbsp;Durch einen Klick auf die Aktivitäten können Sie zusätzliche Informationen einsehen. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Bitte beachten Sie auch, dass Sie Ihre eigenen Aktivitäten nicht liken können.
+    </div>
+  </div>
+</div>
+
+
+<!-- Übergeordneter Container für die Kacheln mit den Informationen der zuletzt hinzugefügten Aktivitäten -->
+<!-- Jede Kachel zeigt eine Aktivität -->
+<!-- zweiseitige: Ansicht: 1: Seite Übersicht und Username+Profilbild | Ansicht 2: Aktivitätsinfos -->
+<!-- feste Elemente auf beiden Seiten sind die Markierung und die Like-Funktion mitsamt Counter-->
+<div class="activity-feed-container">
+  <div class="container-aktivitaeten">
+    <div
+      *ngFor="let item of filteredData()"
+      class="activity-item"
+      (click)="toggleActivityDetails(item)"
+    >
+      <!--zieht sich Item für Item die Elemente aus data
+      diese werden in einzelnen divs angezeigt wegen div *ngFor-->
+      <!-- und für jedes Element div wird halt geguckt ob die Details angezeigt werden soll oder nicht-->
+
+
+
+      <!-- Markierung rechts oben jeder Kachel zur Indizierung der Sichtbarkeit -->
+      <span
+        class="marker"
+        [ngClass]="{ 'marker-green': item.marker === 'green', 'marker-yellow': item.marker === 'yellow' }"
+      ></span>
+      <!--
+           der Span wird dynamisch und von den marker halt abhängig gemacht
+           durch [ngClass] also die SCSS Klasse
+            Guckt für jedes Item welche Markierung gesetzt wurde und sucht zeigt die entsprechende
+            SCSS klasse an
+            -->
+
+
+      <!-- Ansicht 1: Übersicht mit Username und Profilbild, sowie Titel, Datum und Typ der Aktivität -->
+      <!-- wenn nicht sichtbar also details
+      ngif prüft halt welchen Wert showDetails hat
+      ng-container rendert die Anzeige entsprechend
+      alt für Zusatzbeschreibungen
+      -->
+
+      <ng-container *ngIf="!item.showDetails">
+        <div class="profile-mark">
+          <img
+            [src]="item.profilePicture || 'assets/profilicon.png'"
+            alt="Profilbild"
+            class="profile-picture"
+          />
+          <span class="username">{{ item.username }}</span>
+        </div>
+
+        <!-- Aktivitätsinformationen -->
+        <div class="activity-info">
+          <div class="activity-name">{{ item.activityname }}</div>
+          <div class="activity-date">
+            {{ mapActivityType(item.activitytype) }} am
+            {{ item.activitydate | date: 'dd.MM.yyyy' }}
+          </div>
+        </div>
+      </ng-container>
+
+
+
+      <!-- Ansicht mit detaillierten Infos der Aktivität: Typ, Dauer, Distanz, Durchschnittsgeschwindigkeit, Höhe, Kalorienverbrauch. -->
+      <ng-container *ngIf="item.showDetails">
+        <div class="details">
+          <!-- Spalte 1: Typ und Geschwindigkeit -->
+          <div class="details-column">
+            <div class="detail">
+              <span class="detail-value">{{ item.activitytype }}</span>
+              <span class="detail-label">Aktivitätstyp</span>
+            </div>
+            <div class="detail">
+              <span class="detail-value">{{ (item.averagespeedkmh).toFixed(2) }} km/h</span>
+              <span class="detail-label">⌀ Geschwindigkeit</span>
+            </div>
+          </div>
+
+          <!-- Spalte 2: Gesamtdauer und bewältigte Höhe ... -->
+          <div class="details-column">
+            <div class="detail">
+              <span class="detail-value">{{ (item.totaldurationMin / 3600).toFixed(2) }} h</span>
+              <span class="detail-label">Gesamtdauer</span>
+            </div>
+            <div class="detail">
+              <span class="detail-value">{{ (item.altitudemeters).toFixed(2) }} m</span>
+              <span class="detail-label">Höhenmeter</span>
+            </div>
+          </div>
+
+          <!-- Spalte 3: Gesamtdistanz und Kalorien -->
+          <div class="details-column">
+            <div class="detail">
+              <span class="detail-value">{{ (item.totaldistanceMet / 1000).toFixed(2) }} km</span>
+              <span class="detail-label">Gesamtdistanz</span>
+            </div>
+            <div class="detail">
+              <span class="detail-value">{{ item.calorieconsumoption }} kcal</span>
+              <span class="detail-label">Kalorienverbrauch</span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <!-- Footer: Likes -->
+      <div class="activity-footer">
+        <div class="like-container">
+          <button
+            (click)="toggleLikes(item); $event.stopPropagation()"
+            class="like-button"
+            [ngClass]="{
+                'liked': item.userHasLiked || item.isOwner,
+                'not-liked': !(item.userHasLiked || item.isOwner)
+              }"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                [attr.fill]="item.userHasLiked || item.isOwner ? '#EE6F00' : 'transparent'"
+                d="M12 21.758l-1.485-1.356C5.838 15.858 2 12.292 2 8.5 2 5.462 4.462 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.538 3 22 5.462 22 8.5c0 3.792-3.838 7.358-8.515 11.902L12 21.758z"
+              />
+            </svg>
+          </button>
+          <span class="like-count">Likes: {{ item.likeCount }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-navbar></app-navbar>

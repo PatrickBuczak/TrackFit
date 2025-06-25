@@ -1,0 +1,77 @@
+<div class="container-aktivitaeten">
+  <div class="container">
+    <div class="container-text6">Liste Ihrer Aktivitäten:</div>
+  </div>
+
+  <div class="filter-center-container">
+    <input class="filter-input" id="inputField1" type="text" placeholder="Filtere nach einer Aktivität" [(ngModel)]="searchText" />
+    <div class="container-text2">Hinweis: Durch einen Klick auf die Spaltennamen können Sie die Spalten auf- oder absteigend sortieren.</div>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th class="container-text3 column-left" rowspan="2" (click)="sortData('activityid')">ID</th>
+      <th class="container-text3 column-wide" rowspan="2" (click)="sortData('activityname')">Name</th>
+      <th class="container-text3" rowspan="2" (click)="sortData('activitytype')">Typ</th>
+      <th class="container-text3" rowspan="2" (click)="sortData('activitydate')">Datum</th>
+      <th class="container-text3" rowspan="2" (click)="sortData('totaldurationMin')">Gesamtdauer<br>in sec</th>
+      <th class="container-text3" rowspan="2" (click)="sortData('totaldistanceMet')">Gesamtdistanz<br>in m</th>
+      <th class="container-text3 column-narrow" rowspan="3" (click)="sortData('averagespeedkmh')">
+        Durchschnitts-<br>geschwindigkeit<br>in km/h
+      </th>
+      <th class="container-text3" rowspan="2" (click)="sortData('altitudemeters')">Höhenmeter</th>
+      <th class="container-text3" rowspan="2" (click)="sortData('calorieconsumoption')">
+        Kilokalorien-<br>verbrauch
+      </th>
+      <th class="container-text3" rowspan="2" (click)="sortData('visibility')">Sichtbarkeit</th>
+      <th class="container-text3" rowspan="2" (click)="sortData('likeCount')">Likes</th>
+      <th class="container-text3" rowspan="2">Visualisierung</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of filteredData()">
+      <td class="container-text">{{ item.activityid }}</td>
+      <td class="container-text">{{ item.activityname }}</td>
+      <td class="container-text">{{ item.activitytype }}</td>
+      <td class="container-text">{{ item.activitydate | date:'dd.MM.yyyy' }}</td>
+      <td class="container-text">{{ item.totaldurationMin | number:'1.0-2'  }}</td>
+      <td class="container-text">{{ item.totaldistanceMet | number:'1.0-2'  }}</td>
+      <td class="container-text">{{ item.averagespeedkmh | number:'1.0-2'  }}</td>
+      <td class="container-text">{{ item.altitudemeters | number:'1.0-2'  }}</td>
+      <td class="container-text">{{ item.calorieconsumoption | number:'1.0-2'  }}</td>
+      <td class="container-text">{{ item.visibility }}</td>
+      <td class="container-text">{{ item.likeCount || 0 }}</td> <!-- Zeige die Anzahl der Likes -->
+      <td class="container-text">
+        <div class="button-container">
+          <!-- Button for Routenvisualisierung -->
+          <button (click)="navigateToMap(item.activityid)" title="Kartenvisualisierung">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20,60
+         C25,50 35,40 30,30
+         C25,20 45,15 55,25
+         S75,45 70,50
+         C65,55 85,60 80,70
+         C75,80 55,75 45,80
+         C35,85 30,70 20,60 Z"></path>
+            </svg>
+          </button>
+
+          <!-- Button for Höhenvisualisierung -->
+          <button (click)="navigateToElevation(item.activityid)" title="Höhenvisualisierung">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="10,80 25,40 40,60 60,20 80,50"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container-gap"></div>
+<br>
+<br>
+<br>
+<app-navbar></app-navbar>

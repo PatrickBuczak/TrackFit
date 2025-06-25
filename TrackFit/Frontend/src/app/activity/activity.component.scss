@@ -1,0 +1,141 @@
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 36px auto;
+  text-align: center;
+  margin-top:84px;
+}
+
+.welcome-button {
+  margin-top: -12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background: none;
+  cursor: default;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.welcome-button2 {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+
+.router-button {
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: #12142B;
+  border: 3px solid rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  width: 240px;
+  height: 80px;
+}
+
+.router-button:hover {
+  background-color: #EE6F00;
+  color: white;
+  border-color: white;
+}
+
+.container {
+  color: white;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  padding: 5px 15px;
+  cursor: default;
+}
+
+.container-text {
+  margin-top: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+.container-text2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d66e2c;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+.container-input-upload {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  border: 3px solid rgb(255, 255, 255);
+  background: white;
+  cursor: pointer;
+  padding: 12px 32px;
+  border-radius: 8px;
+  width: 360px;
+}
+
+.container-input-upload:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid  #EE6F00;
+}
+
+.container-input {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  width: 360px;
+  border: 3px solid rgb(255, 255, 255);
+  background: white;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.container-input:hover {
+  background-color: white;
+  color: black;
+  border-color: #EE6F00;
+}
+
+
+.container-input2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  border: none;
+  background: white;
+  cursor: pointer;
+  padding: 8px 24px;
+  border-radius: 8px;
+  width: 240px;
+  box-sizing: border-box;
+}
+
+.container-input2:hover {
+  background-color: white;
+  color: black;
+  border-color: #EE6F00;
+}

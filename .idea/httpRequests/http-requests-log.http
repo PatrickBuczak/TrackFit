@@ -1,0 +1,556 @@
+GET http://localhost:8080/api/v1/activity/9/likes
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 16
+
+username=PetrYan
+
+<> 2024-12-13T024909.200.json
+
+###
+
+POST http://localhost:8080/api/v1/activity/9/like?username=IslamMakhachev
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-12-13T024903.200.txt
+
+###
+
+POST http://localhost:8080/api/v1/activity/9/like?username=IslamMakhachev
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-12-13T024900.200.txt
+
+###
+
+POST http://localhost:8080/api/v1/activity/9/like?username=IslamMakhachev
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-12-13T024858.200.txt
+
+###
+
+GET http://localhost:8080/api/v1/activity/9/likes
+Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 16
+
+username=PetrYan
+
+<> 2024-12-13T024751.200.json
+
+###
+
+GET http://localhost:8080/api/v1/friends/visibility?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-08T211437.200.txt
+
+###
+
+GET http://localhost:8080/api/v1/friends/visibility?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-08T203526.200.txt
+
+###
+
+GET http://localhost:8080/api/v1/friends/visibility?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-08T174350.200.txt
+
+###
+
+POST http://localhost:8080/api/v1/friends/change-visibility
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 12
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+username=Ken
+
+<> 2024-12-08T174347.200.txt
+
+###
+
+GET http://localhost:8080/api/v1/friends/visibility?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-08T174315.200.txt
+
+###
+
+GET http://localhost:8080/api/v1/friends/received-requests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T192607.200.json
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T191431.200.json
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T190337.200.json
+
+###
+
+POST http://localhost:8080/api/friends/withdrawRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T190335.200.txt
+
+###
+
+POST http://localhost:8080/api/friends/withdrawRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T190333.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T190328.200.json
+
+###
+
+POST http://localhost:8080/api/friends/withdrawRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T190325.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T190249.200.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T190228.200.txt
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 28
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken%0Areceiver%3DMaxM
+
+<> 2024-12-06T190030.400.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 28
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken%3Freceiver%3DMaxM
+
+<> 2024-12-06T190015.400.json
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T185850.200.json
+
+###
+
+GET http://localhost:8080/api/friends/friends?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T185829.200.json
+
+###
+
+GET http://localhost:8080/api/friends/receivedRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T173151.200.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T144458.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/friends?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141558.200.json
+
+###
+
+POST http://localhost:8080/api/friends/acceptRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=Test
+
+<> 2024-12-06T141555.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/friends?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141534.200.json
+
+###
+
+POST http://localhost:8080/api/friends/acceptRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 23
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=Max
+
+<> 2024-12-06T141527.200.txt
+
+###
+
+POST http://localhost:8080/api/friends/acceptRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 23
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=Max
+
+<> 2024-12-06T141522.200.txt
+
+###
+
+POST http://localhost:8080/api/friends/acceptRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=MaxM&receiver=Ken
+
+<> 2024-12-06T141509.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/receivedRequests?username=MaxM
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141501.200.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T141454.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/friends?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141440.200.json
+
+###
+
+GET http://localhost:8080/api/friends/friends?username=MaxM
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141434.200.json
+
+###
+
+POST http://localhost:8080/api/friends/acceptRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=MaxM&receiver=Ken
+
+<> 2024-12-06T141351.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=Ken
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141252.200.json
+
+###
+
+GET http://localhost:8080/api/friends/sentRequests?username=MaxM
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141240.200.json
+
+###
+
+GET http://localhost:8080/api/friends/receivedRequests?username=MaxM
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141203.200.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T141157.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/receivedRequests?username=MaxM
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T141149.200.json
+
+###
+
+POST http://localhost:8080/api/friends/withdrawRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T141138.200.txt
+
+###
+
+GET http://localhost:8080/api/friends/receivedRequests?username=MaxM
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-12-06T123227.200.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T123127.200.txt
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T121829.500.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T120800.500.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T120123.500.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T114908.500.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T114719.500.json
+
+###
+
+POST http://localhost:8080/api/friends/sendRequest
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+sender=Ken&receiver=MaxM
+
+<> 2024-12-06T113757.500.json
+
+###
+

@@ -1,0 +1,50 @@
+<div class="center-container">
+  <div>
+    <button class="welcome-button2" disabled>Aktivität über GPX-Datei erstellen:</button>
+    <p></p>
+    <button class="welcome-button" disabled><p>Die GPX-Datei soll eine Aktivitätsspur aus Breiten- und Längengrad,
+      Höhe und einen Zeitstempel umfassen. </p><p>Den Aktivitätsnamen und Aktivitätstypen können Sie aus der GPX Datei übernehmen oder selbst eintragen.</p></button>
+  </div>
+
+
+  <div class="container">
+    <p></p>
+    <input class="container-input-upload" id="inputField1" type="file" alt="GPX-Datei" (change)="onFileSelected($event)">
+    <p></p>
+    <div class="container-optionen">
+      <button class="container-text">*Sichtbarkeit: </button>
+      <p></p>
+      <select class="container-input2" [(ngModel)]="visibility" required>
+        <option value="" disabled selected>...</option>
+        <option value="sichtbar">sichtbar</option>
+        <option value="nicht sichtbar">nicht sichtbar</option>
+        <option value="nur Freunde">nur Freunde</option>
+      </select>
+    </div>
+    <div class="container-optionen">
+      <button class="container-text">Aktivitätsname:  </button>
+      <p></p>
+      <input class ="container-input" [(ngModel)]="activityname" type="text" placeholder="...">
+    </div>
+    <div class="container-optionen">
+      <button class="container-text">Aktivitätstyp: </button>
+      <p></p>
+      <select class="container-input2" [(ngModel)]="activitytype" required>
+        <option value="" disabled selected>...</option>
+        <option value="Laufen">Laufen</option>
+        <option value="Spazieren"> Spazieren</option>
+        <option value="Wandern">Wandern</option>
+        <option value="Radfahren">Radfahren</option>
+      </select>
+    </div>
+
+    <p></p>
+    <button class="router-button" (click)="uploadGpxFile()" >Erstellen</button>
+    <p></p>
+  </div>
+</div>
+<p></p>
+<br>
+<br>
+<br>
+<app-navbar></app-navbar>

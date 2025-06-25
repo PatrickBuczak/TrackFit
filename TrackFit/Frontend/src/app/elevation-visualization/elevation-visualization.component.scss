@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  position: relative;
+  scrollbar-gutter: stable;
+}
+
+/* Chart-Container */
+.chart-container {
+  height: 50vh; /* 50% der Bildschirmhöhe */
+  width: 50vw; /* 50% der Bildschirmbreite */
+  position: relative;
+  margin-top: -0.4vw;
+}
+
+/* Canvas im Chart-Container */
+#elevationChart {
+  height: 100%; /* Nimmt die Höhe des Containers ein */
+  width: 100%; /* Nimmt die Breite des Containers ein */
+}
+
+/* Return-Button */
+.return-button {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #12142B;
+  cursor: pointer;
+  width: 240px;
+  padding: 24px 36px;
+  border-radius: 8px;
+  margin-top: 8vh;
+}
+
+.return-button:hover {
+  background-color: #EE6F00;
+  color: white;
+  border-color: white;
+}
+
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+  margin-top: 1.8vh;
+}
+
+.text6-highlight {
+  font-size: 24px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+  margin-top: 1.8vh;
+}
+
+// TOOLTIP STYLING
+.tooltip {
+  background-color: rgba(18, 20, 43, 0.9);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  max-width: 440px;
+  min-width: 440px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgb(255, 255, 255);
+
+  .tooltip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .tooltip-header {
+      text-align: center;
+      margin-bottom: 12px;
+
+      .tooltip-activity-name {
+        margin-top: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #EE6F00;
+      }
+
+      .tooltip-activity-date {
+        font-size: 15px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+
+    .tooltip-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px; /* Abstand zwischen den Spalten */
+
+      &.bottom-row { /* Spezifischer Selektor für die untere Zeile */
+        gap: 48px; /* Größerer Abstand für die zwei Spalten */
+      }
+    }
+
+    .tooltip-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px; /* Abstand zwischen den Zeilen innerhalb einer Spalte */
+    }
+
+    .tooltip-value {
+      font-size: 18px;
+      font-weight: bold;
+      color: #EE6F00;
+    }
+
+    .tooltip-label {
+      font-size: 15px;
+      color: white;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+  }
+}

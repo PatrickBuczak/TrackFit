@@ -1,0 +1,4 @@
+Erstelle eine MySQL-Connection namens "trackfit"
+Stelle die Connection auf "localhost:3306" mit User "root" und Passwort "123456"
+Erstelle in der Connection über den folgenden Befehl eine Datenbank namens "trackfit"
+"create database trackfit;"

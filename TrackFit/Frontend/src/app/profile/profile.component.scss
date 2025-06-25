@@ -1,0 +1,388 @@
+:host {
+  user-select: none; /* Verhindert die Markierung von Text */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 75%; // Container-Breite
+  margin: 100px auto 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.container-gap {
+  margin-top: 120px;
+}
+
+// USER-INFO
+
+.container-userinfo {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Distribute columns with space between */
+  align-items: flex-start; /* Align items at the start vertically */
+  gap: 5vw; /* Add some spacing between the columns */
+}
+
+// Spalten
+.left-column,
+.middle-column,
+.right-column {
+  width: 20vw; /* Feste Breite */
+}
+
+.left-column,
+.middle-column {
+  flex: 2; // 1. und 2. Spalte sind breiter
+}
+
+.right-column {
+  flex: 1; // 3. Spalte schmaler
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: -5.2vw; //verschoben zur Designanpassung
+}
+
+//User-Info-Paare
+.text-row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 16px; /* Abstand zwischen Bezeichnung und Infoinput*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px
+}
+
+.container-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+.container-text-profilbild {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  margin-bottom: 48px;
+  font-family: sans-serif;
+}
+
+.container-text3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+.container-text4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(238, 111, 0, 0);
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}
+
+
+//Überschriften-Styling
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+// AKTIVITÄTEN-LISTE:
+
+//Filter-Eingabefeld
+.filter-input {
+  width: 20%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: 3px solid #12142B;
+  background: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: sans-serif; /* sans-serif erzwingen */
+  cursor: pointer;
+}
+
+.filter-input:hover {
+  background-color: white;
+  color: black;
+  border-color: #EE6F00;
+}
+
+//Hinweis-Text
+.filter-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  border: 1px solid red;
+  padding: 4px 8px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+thead {
+  border-bottom: 2px solid red;
+}
+
+//Tabellenspalten-Fixes
+
+.column-wide {
+  min-width: 200px; /* Mindestbreite */
+  max-width: 300px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+.column-narrow {
+  min-width: 96px; /* Mindestbreite */
+  max-width: 96px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+.column-left {
+  min-width: 32px; /* Mindestbreite */
+  max-width: 32px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+
+
+// AKTIVITÄTEN-ZUSAMMENFASSUNG:
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  max-width: 80%;
+  margin: -32px auto;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.container2 > div {
+  flex: 1;
+}
+
+.container-aktivitaeten{
+  margin-top: 160px;
+  text-align: center;
+  font-family: sans-serif; /* sans-serif erzwingen */
+  margin-bottom: -128px;
+}
+
+.container-erfolge{
+  margin-top: 160px;
+  text-align: center;
+  font-family: sans-serif; /* sans-serif erzwingen */
+  margin-bottom: -16px;
+}
+
+//Werte
+.container-text5 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+  margin-top: 48px;
+}
+
+//Bezeichnungen
+.container-text2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+//Werte Platzhalter
+.container-text5ph {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(238, 111, 0, 0);;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+  margin-top: 48px;
+}
+
+//Bezeichnungen Platzhalter
+.container-text2ph {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(238, 111, 0, 0);;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+//Visualisierungs-Buttons
+button {
+  background-color: transparent; /* Ensure no background color */
+  border: none; /* No border around button */
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Ensure the button itself doesn't change on hover */
+  &:hover {
+    background-color: transparent; /* No hover background */
+  }
+
+  // SVG-Icons
+  svg {
+    width: 28px; /* Set size of the SVG */
+    height: 28px;
+    stroke: white; /* Default line color */
+    stroke-width: 8; /* Set wider stroke */
+    fill: none; /* Ensure no fill inside the SVG */
+
+    /* Hover effect for the SVG */
+    &:hover {
+      stroke: #EE6F00; /* Change line color to orange on hover */
+    }
+  }
+}
+
+
+.button-container {
+  display: flex;
+  gap: 8px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+}
+
+
+
+
+//LOGOUT-BUTTON
+.logout-button {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #12142B;
+  cursor: pointer;
+  width: 240px;
+  padding: 24px 36px;
+  border-radius: 8px;
+  margin: 280px auto;
+}
+
+.logout-button:hover {
+  background-color: #EE6F00;
+  color: white;
+  border-color: white;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.like-count {
+  font-size: 14px;
+  color: white; /* Setze die Schriftfarbe auf Weiß */
+  font-weight: bold;
+  text-align: center;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  fill: #EE6F00; /* Herz in Orange */
+}
+
+.gesamtdauer-column {
+  min-width: 80px; /* Mindestbreite */
+  max-width: 100px; /* Maximale Breite */
+  text-align: center; /* Zentriere den Inhalt */
+}
+
+.gesamtdistanz-column {
+  min-width: 80px; /* Mindestbreite */
+  max-width: 100px; /* Maximale Breite */
+  text-align: center; /* Zentriere den Inhalt */
+}
+
+
+
+  .container-activity {
+
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: #12142B;
+    cursor: pointer;
+    width: 360px;
+    padding: 32px;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 80px;
+  }
+
+
+.container-activity:hover {
+  background-color: #EE6F00; /* Optional: Farbe ändern beim Hover */
+}
+

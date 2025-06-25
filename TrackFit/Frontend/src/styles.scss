@@ -1,0 +1,64 @@
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #0A0A1A;
+  background: linear-gradient(
+      349deg,
+      rgb(37, 54, 87) 0%,
+      rgb(38, 54, 78) 12%,
+      rgba(18, 20, 43, 1) 73%
+  );
+  position: relative;
+
+  // Hintergrundbild als pseudo-element, d.h. nur in css verfügbar, nicht in der .html
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/assets/Background_Image.jpg');
+    background-size: cover;
+    background-position: center -96px; // Abweichung vom Center
+    background-repeat: no-repeat;
+    filter: grayscale(80%); // Entsättigen
+    mix-blend-mode: multiply; // Multiplizieren Blend Mode
+    z-index: -1; // unterste Ebene
+  }
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(27, 30, 60) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(39, 44, 83); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+  background: #3b475e;
+  border-radius: 10px;
+}
+
+/* Blendet die Scrollbar aus, wenn nicht gescrollt wird */
+:host::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+html, body {
+  overflow-y: auto; /* Scrolling nur möglich, wenn nötig */
+  scrollbar-gutter: auto; /* verhindert, dass die Scrollbar den content verschiebt */
+}

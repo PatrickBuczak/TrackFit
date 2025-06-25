@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12vh;
+  position: relative;
+  scrollbar-gutter: stable;
+}
+
+#map {
+  height: 500px; /* Höhe der Karte */
+  width: 100%; /* Breite der Karte */
+  max-width: 800px; /* Maximale Breite für die Box */
+  margin: auto; /* Verschiebt die Karte nach unten */
+  border: 6px solid white; /* Optionale Umrandung */
+  border-radius: 8px; /* Optionale abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionale Schatten */
+  overflow: hidden; /* Verhindert Überlauf */
+}
+.map-container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 800px; /* Maximale Breite des Containers */
+  box-sizing: border-box;
+}
+
+.leaflet-control-zoom {
+  top: 100px; /* Verschiebt die Zoom-Steuerelemente nach unten */
+  left: 20px; /* Optional: Abstand von der linken Seite */
+}
+
+.leaflet-tooltip {
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 999; /* Ensure it appears above other elements */
+}
+
+
+.leaflet-tooltip-left::before {
+  border-left-color: transparent;
+}
+
+.leaflet-tooltip-right::before {
+  border-right-color: transparent;
+}
+
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+}
+
+.text6-highlight {
+  font-size: 24px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+}
+
+.return-button {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #12142B;
+  cursor: pointer;
+  width: 240px;
+  padding: 24px 36px;
+  border-radius: 8px;
+  margin: 8vh auto;
+}
+
+.return-button:hover {
+  background-color: #EE6F00;
+  color: white;
+  border-color: white;
+}
+
+.likes-container {
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+
+  p {
+    font-size: 16px;
+    color: #555;
+
+    strong {
+      font-weight: bold;
+      color: #000;
+    }
+  }
+}

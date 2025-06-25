@@ -1,0 +1,117 @@
+.friends-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1200px;
+  background: rgba(11, 13, 25, 0.8);
+  border-radius: 10px;
+  color: white;
+  font-family: sans-serif;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.left-section,
+.right-section {
+  width: 48%;
+}
+
+h2 {
+  font-size: 22px;
+  color: #EE6F00;
+  margin-bottom: 16px;
+  cursor: default;
+}
+
+.friend-item,
+.request-item,
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1F2136;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+// Grundlegendes Styling für Buttons
+button {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: #12142B;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+  &.remove-btn:hover,
+  &.withdraw-btn:hover {
+    background: #D32F2F;
+    color: white;
+    border-color: #D32F2F;
+  }
+
+  &.visibility-toggle:hover {
+    background: #EE6F00;
+    color: white;
+    border-color: #EE6F00;
+  }
+
+  &.add-btn:hover,
+  &.profile-link:hover {
+    background: #00A859;
+    color: white;
+    border-color: #00A859;
+  }
+
+  &.name-btn {
+    background: none;
+    color: white;
+    border: none;
+    cursor: default;
+    font-weight: normal;
+
+    &:hover {
+      background: none;
+      color: white;
+      border: none;
+      cursor: default;
+    }
+  }
+}
+
+// Suchfeld
+.search-input {
+  width: 96%;
+  padding: 12px;
+  border: 2px solid #EE6F00;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+// Sichtbarkeit-Umschalt-Bereich
+.visibility-container {
+  text-align: center;
+  margin: 20px auto;
+
+  .visibility-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #444;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #EE6F00;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<div class="container-aktivitaeten">
+  <!-- Container für das Label dieser Componente "Leaderboard -->
+  <div class="container">
+    <div class="container-text6">Benutzersuche:</div>
+  </div>
+
+<div class="filter-center-container">
+     <input class="filter-input" id="inputField1" type="text" placeholder="Filtere nach Benutzernamen" [(ngModel)]="searchText" />
+  <div class="container-text">Durch einen Klick auf den Benutzernamen werden Sie zur entsprechenden Profilseite navigiert.</div>
+</div>
+
+  <div class="filter-center-container">
+  <!-- Blöcke mit 64 Einträgen anzeigen, abhängig von blockCount (berechnet in der TS - beginnend mit 1 -->
+  <div *ngFor="let blockIndex of [].constructor(blockCount); let i = index">
+    <table>
+      <thead>
+      <tr>
+        <th class="container-text2" colspan="8" (click)="sortData('username')">Benutzername</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Jede Tabelle wird in 8 Zeilen unterteilt -->
+      <tr *ngFor="let columnIndex of [0, 1, 2, 3, 4, 5, 6, 7]">
+        <td class="column-block">
+          <div *ngFor="let item of filteredData() | slice:((i * 64) + (columnIndex * 8)):((i * 64) + (columnIndex * 8) + 8)" class="table-row">
+            <button class="router-button" (click)="navigate(item.username)">
+              {{ item.username }}
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+   </div>
+
+    <div class="container-abschluss">
+    <button class="container-text">Hinweis: Durch einen Klick auf den Spaltennamen können Sie die Spalte aufsteigend oder absteigend sortieren.</button>
+    </div>
+  </div>
+</div>
+<app-navbar></app-navbar>

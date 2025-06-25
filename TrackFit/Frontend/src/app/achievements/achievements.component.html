@@ -1,0 +1,40 @@
+<div class="achievements-container">
+  <!-- Überschrift Aktivitätstypen -->
+  <div class="achievement-group" *ngFor="let group of achievementGroups">
+    <h3>{{ group.type }}</h3>
+
+    <!-- Erfolge in Reihe aufgeführt -->
+    <div class="achievement-row">
+      <div class="achievement-item" *ngFor="let achievement of group.achievements">
+        <div class="erfolg-tooltip-container">
+
+          <!-- Pokalicon für jedes Erfolgs-Item -->
+          <img
+            [ngSrc]="achievement.achieved ? achievement.icon : 'assets/icons/no_achieve.png'"
+            [width]="achievement.achieved ? 100 : 50"
+            [height]="achievement.achieved ? 100 : 50"
+            alt="Trophy Icon"
+            class="trophy-icon"
+            (error)="fallbackImage($event)"
+          />
+
+          <!-- Tooltip -->
+          <div class="tooltip" [ngClass]="{'not-achieved': !achievement.achieved}">
+            <!-- Meilensteinwert für den Erfolg -->
+            <div class="tooltip-main" [ngClass]="{'not-achieved': !achievement.achieved}">
+              <span class="highlight">{{ achievement.target / 1000 }}</span>
+              <span class="unit">km</span>
+            </div>
+            <!-- Textanpassung gemäß Aktivitätstyp des Erfolges -->
+            <div class="tooltip-type" [ngClass]="{'not-achieved': !achievement.achieved}">
+              {{ achievement.cumulative
+              ? 'in ' + labels[group.type].plural
+              : 'in ' + labels[group.type].singular }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

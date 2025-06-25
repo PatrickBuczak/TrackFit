@@ -1,0 +1,23 @@
+<div class="login-container" (keydown.enter)="login()">
+  <div class="container">
+    <button class="container-text" tabindex="-1">Benutzername: </button>
+    <input class="container-input" [(ngModel)]="username" (input)="checkusername()" type="text" placeholder="...">
+
+    <button class="container-text" tabindex="-1">Passwort: </button>
+    <input class="container-input" [(ngModel)]="password" (input)="checkpassword()" type="password" placeholder="...">
+  </div>
+
+  <p id="commentLP" class="container-textcorrect" tabindex="-1" [class.show]="commentLP">{{ commentLP }}</p>
+  <p id="commentLogin" class="container-textcorrect" tabindex="-1" [class.show]="commentLogin">{{ commentLogin }}</p>
+
+  <button class="login-button" (click)="login()">Anmelden</button>
+
+  <div class="registration-link">
+    <p>
+      <button class="container-text2" tabindex="-1" disabled>Sind Sie noch nicht registriert?</button>
+      <br>
+      <button class="container-text2" tabindex="-1" disabled>Hier geht's zur </button>
+      <button class="reg-button" routerLink="/register">Registrierung</button>
+    </p>
+  </div>
+</div>

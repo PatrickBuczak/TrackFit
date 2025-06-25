@@ -1,0 +1,131 @@
+.achievements-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 80%;
+  margin: 0 auto;
+  align-items: flex-start;
+  text-align: center;
+  padding: 20px;
+  gap: 20px;
+
+  .achievement-group {
+    flex: 1 1 calc(25% - 20px);
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+
+    h3 {
+      font-size: 14pt;
+      margin-bottom: 5px;
+    }
+
+    .achievement-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      min-height: 200px; /* Einheitliche Höhe für alle Gruppen */
+    }
+  }
+}
+
+.achievement-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  .trophy-icon {
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+
+    &.achieved {
+      width: 120px;
+      height: 120px;
+    }
+
+    &.not-achieved {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .erfolg-tooltip-container {
+    position: relative;
+
+    .tooltip {
+      position: absolute;
+      top: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      visibility: hidden;
+      background-color: #1b1e3c;
+      text-align: center;
+      padding: 20px 10px; /* Padding - oben+unten mehr als seitlich */
+      border-radius: 6px;
+      border: 3px solid #fff;
+      font-size: 12pt;
+      line-height: 1.4rem;
+      width: 200px; /* einheitliche Breite für den Tooltip */
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      &.not-achieved {
+        color: #7a8ba3; /* Textfarbe für nicht erreichte Erfolge */
+        top: 212%; /* Tooltip für nicht erreichte Erfolge tiefer - um auf gleicher Höhe zu erscheinen wie der Tooltip für erreichte Erfolge*/
+
+      }
+      /* Zahlenwert */
+      .tooltip-main {
+        font-size: 24pt; /* größere Schrift für den Wert */
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        /* Styling erreichter Erfolg */
+        .highlight {
+          font-size: 24pt;
+          font-weight: bold;
+          color: #ee6f00; /* orange bei erreichten Erfolgen */
+        }
+
+        .unit {
+          font-size: 16pt; /* Einheit kleiner */
+          font-weight: bold;
+          margin-left: 4px;
+          color: #ee6f00;
+        }
+
+        &.not-achieved .highlight,
+        &.not-achieved .unit {
+          color: #7a8ba3; /* Textfarbe für not achieved */
+        }
+      }
+      /* Aktivitätstyp im Tooltip */
+      .tooltip-type {
+        font-size: 12pt; /* Text kleiner als die Meilensteinwerte */
+        margin-top: 10px;
+        color: #fff;
+
+        &.not-achieved {
+          color: #7a8ba3;
+        }
+      }
+    }
+
+    &:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+
+}

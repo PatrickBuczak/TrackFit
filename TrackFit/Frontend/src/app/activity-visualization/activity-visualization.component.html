@@ -1,0 +1,29 @@
+<div class="activity-visualization">
+  <!-- Titel der Seite -->
+  <h1>Aktivitätsvisualisierung</h1>
+
+  <!-- Dropdown zur Auswahl des Jahres -->
+  <div class="container-year-selection">
+    <div class="year-selection-box">
+      Wähle ein Jahr:
+      <select
+        class="year-dropdown"
+        [(ngModel)]="selectedYear"
+        (change)="fetchActivitySummary()"
+      >
+        <!-- Bindet das ausgewählte Jahr an die Variable `selectedYear` -->
+        <!-- Ruft die Funktion `fetchActivitySummary()` auf, wenn sich die Auswahl ändert -->
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Diagramm -->
+  <div class="chart-container">
+    <canvas id="activityChart"></canvas>
+  </div>
+</div>
+
+<div class="button-container">
+  <button class="return-button" (click)="backnavigate()">Zurück</button>
+</div>

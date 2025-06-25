@@ -1,0 +1,60 @@
+
+.chart-container {
+  max-width: 80%; /* Begrenzung der Breite des Diagramms auf 80% */
+  margin: 0 auto; /* Zentriert den Diagramm-Container */
+  font-size: 16px;
+}
+
+
+.container-year-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontale Zentrierung */
+  margin-top: 40px; /* Abstand von oben */
+  font-family: sans-serif;
+}
+
+.year-selection-box {
+  padding: 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+
+}
+
+.year-dropdown {
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #12142B;
+  border: 3px solid #ffffff;
+  border-radius: 8px;
+  padding: 0 10px;
+  cursor: pointer;
+  margin-left: 24px;
+  text-align: center;
+}
+
+.return-button {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #12142B;
+  cursor: pointer;
+  width: 240px;
+  padding: 24px 36px;
+  border-radius: 8px;
+  margin: 8vh auto;
+}
+
+.return-button:hover {
+  background-color: #EE6F00;
+  color: white;
+  border-color: white;
+}

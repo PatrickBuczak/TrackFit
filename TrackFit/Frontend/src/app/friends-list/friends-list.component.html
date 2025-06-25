@@ -1,0 +1,94 @@
+<div class="friends-container">
+  <div class="left-section">
+    <!-- Sichtbarkeit-Umschalt-Bereich -->
+    <div class="visibility-container">
+      <p
+        class="visibility-display"
+        (click)="toggleVisibility()"
+        title="Klicke, um die Sichtbarkeit zu ändern"
+      >
+        Sichtbarkeit: {{ visibility || 'unbekannt' }}
+      </p>
+    </div>
+
+
+
+
+
+    <!-- Freundesliste -->
+    <h2>Freunde</h2>
+    <div *ngIf="friends.length > 0; else noFriends" class="friends-list">
+      <div *ngFor="let friend of friends" class="friend-item">
+        <button class="profile-link" (click)="navigateToProfile(friend)">
+          {{ friend }}
+        </button>
+        <button class="remove-btn" (click)="deleteFriend(friend)">
+          Entfernen
+        </button>
+      </div>
+    </div>
+    <ng-template #noFriends>
+      <p>Du hast noch keine Freunde.</p>
+    </ng-template>
+
+    <!-- Gesendete Anfragen -->
+    <h2>Gesendete Anfragen</h2>
+    <div *ngIf="sentRequests.length > 0; else noSentRequests" class="requests-list">
+      <div *ngFor="let request of sentRequests" class="request-item">
+        <span>{{ request }}</span>
+        <button class="withdraw-btn" (click)="withdrawRequest(request)">
+          Zurückziehen
+        </button>
+      </div>
+    </div>
+    <ng-template #noSentRequests>
+      <p>Keine gesendeten Anfragen.</p>
+    </ng-template>
+
+    <!-- Empfangene Anfragen -->
+    <h2>Empfangene Anfragen</h2>
+    <div *ngIf="receivedRequests.length > 0; else noReceivedRequests" class="requests-list">
+      <div *ngFor="let request of receivedRequests" class="request-item">
+        <span>{{ request }}</span>
+        <div class="actions">
+          <button class="add-btn" (click)="respondToRequest(request, true)">Annehmen</button>
+          <button class="withdraw-btn" (click)="respondToRequest(request, false)">
+            Ablehnen
+          </button>
+        </div>
+      </div>
+    </div>
+    <ng-template #noReceivedRequests>
+      <p>Keine empfangenen Anfragen.</p>
+    </ng-template>
+  </div>
+
+
+
+
+
+  <!-- Rechte Seite mit Benutzersuche -->
+  <div class="right-section">
+    <h2>Alle Benutzer</h2>
+    <input
+      class="search-input"
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Benutzer suchen..."
+    />
+    <div *ngIf="filteredUsers().length > 0; else noUsersFound" class="users-list">
+      <div *ngFor="let user of filteredUsers()" class="profile-item">
+        <button class="name-btn">{{ user.username }}</button>
+        <button class="add-btn" (click)="sendFriendRequest(user.username)">
+          Hinzufügen
+        </button>
+      </div>
+    </div>
+    <ng-template #noUsersFound>
+      <p>Keine Benutzer gefunden.</p>
+    </ng-template>
+  </div>
+</div>
+
+<!-- Navigation -->
+<app-navbar></app-navbar>

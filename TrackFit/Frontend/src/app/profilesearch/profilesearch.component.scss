@@ -1,0 +1,163 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 75%; // Container-Breite
+  margin: 80px auto 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+
+.router-button {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white;
+  background: #12142B;
+  cursor: pointer;
+  padding: 6px 18px;
+  margin: 2px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  min-width: 200px;
+  max-width: 200px;
+  overflow: hidden; /* Verhindert, dass Text über den Button hinausragt */
+  text-overflow: ellipsis; /* Fügt "..." hinzu, wenn der Text zu lang ist */
+  white-space: nowrap; /* Verhindert, dass der Text umbricht */
+}
+
+.router-button:hover {
+  color: white;
+  background-color: #EE6F00;
+  border-color: white;
+}
+
+.filter-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 75%; // Container-Breite
+  margin: 80px auto 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.container-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+
+}
+
+.container-text-header {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+}
+
+.container-text2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #EE6F00;
+  text-align: center;
+  padding: 16px 0;
+  width: 100%;
+  display: table-cell;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.filter-input {
+  width: 380px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: 3px solid #12142B;
+  background: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: sans-serif; /* sans-serif erzwingen */
+  cursor: pointer;
+}
+
+.filter-input:hover {
+  background-color: white;
+  color: black;
+  border-color: #EE6F00;
+}
+
+
+.container-abschluss{
+  margin-top:40px;
+  margin-bottom: 80px;
+}
+/* Arrangement im Grid */
+table.table-centered {
+  width: 100%;
+  margin-bottom: 24px;
+  display: grid;
+  justify-content: center;
+}
+
+table tbody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamische Spaltenanzahl */
+  grid-template-rows: repeat(8, auto); /* Maximal 8 Zeilen pro Spalte */
+  grid-auto-flow: column; /* Befüllung erfolgt spaltenweise */
+  gap: 8px;
+  justify-content: center;
+  max-width: calc(200px * 8); /* Maximal 8 Spalten */
+}
+
+/* Entferne zusätzliche Container-Ebenen um die Buttons */
+.column-block, td, tr {
+  display: contents;
+}
+
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  text-align: center;
+}
+
+
+.container-aktivitaeten{
+  font-family: sans-serif; /* sans-serif erzwingen */
+  margin-top: 112px;
+}
+
+.container-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}

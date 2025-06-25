@@ -1,0 +1,174 @@
+<div class="container">
+  <div class="button-container">
+    <button (click)="showFormular('formRegBen')" class="router-button" [class.active]="currentSection === 'formRegBen'">Als regulärer Benutzer registrieren</button>
+    <button (click)="showFormular('formAdmin')" class="router-button" [class.active]="currentSection === 'formAdmin'">Als Administrator registrieren</button>
+  </div>
+  <!-- Registrierungsinputmaske regulärer Nutzer -->
+
+  <!-- linke Spalte -->
+  <div id="inhaltRegBen" *ngIf="currentSection === 'formRegBen'">
+    <div class="left-column">
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Benutzername:</button>
+        <input class="container-input" [(ngModel)]="usernameR" (input)="checkusernameR()" type="text" placeholder="...">
+        <p id="commentUR" class="container-textcorrect" tabindex="-1">{{ commentUR }}</p>
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* E-Mail-Adresse:</button>
+        <input class="container-input" [(ngModel)]="emailR" (input)="checkemailR()" type="email" placeholder="...">
+        <p id="commentER" class="container-textcorrect" tabindex="-1">{{ commentER }}</p>
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Passwort:</button>
+        <input class="container-input" [(ngModel)]="passwordR" (input)="validatePasswordsR()" type="password" placeholder="...">
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Passwort wiederholen:</button>
+        <input class="container-input" [(ngModel)]="confirmPasswordR" (input)="validatePasswordsR()" type="password" placeholder="...">
+        <p id="commentPR" class="container-textcorrect" tabindex="-1">{{ commentPR }}</p>
+      </div>
+    </div>
+
+
+    <!-- mittlere Spalte-->
+    <div class="middle-column">
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Vorname:</button>
+        <input class="container-input" id="inputField2" type="text" placeholder="...">
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Nachname:</button>
+        <input class="container-input" id="inputField3" type="text" placeholder="...">
+      </div>
+
+      <div class="middle-column-container">
+        <div class="middle-column-inner">
+          <button class="container-text" tabindex="-1">* Geburtsdatum:</button>
+          <input class="container-input" id="inputField5" type="date" placeholder="...">
+        </div>
+        <!-- innerer Container der mittleren Spalte -->
+        <div class="middle-column-inner">
+          <button class="container-text" tabindex="-1">* Geschlecht:</button>
+          <select class="container-input" id="inputField8">
+            <option value="" disabled selected>...</option>
+            <option value="Männlich">Männlich</option>
+            <option value="Weiblich">Weiblich</option>
+            <option value="Divers">Divers</option>
+          </select>
+        </div>
+        <div class="middle-column-inner">
+          <button class="container-text" tabindex="-1">* Größe in cm:</button>
+          <input class="container-input" id="inputField6" type="number" placeholder="..." min="50" max="250">
+        </div>
+        <div class="middle-column-inner">
+          <button class="container-text" tabindex="-1">* Gewicht in kg:</button>
+          <input class="container-input" id="inputField7" type="number" placeholder="..." min="30" max="260">
+        </div>
+      </div>
+    </div>
+
+    <!-- rechte Spalte-->
+    <div class="right-column">
+      <button class="container-text" tabindex="-1">Profilbild (Optional):</button>
+      <input
+        class="container-input2"
+        id="inputField9"
+        type="file"
+        accept="image/*"
+        (change)="onFileSelectedR($event)"
+      />
+
+      <!-- Bildvorschau-->
+      <img
+        *ngIf="profiletestR"
+        [src]="profiletestR"
+        alt="Profilbild Vorschau"
+        class="image-preview"
+        tabindex="-1"
+      />
+    </div>
+
+    <p id="commentRegisterR" class="container-textcorrect2" tabindex="-1" [class.show]="commentRegisterR">{{ commentRegisterR }}</p>
+    <button class="register-button" (click)="registerR()">Registrieren</button>
+  </div>
+
+
+  <!-- Registrierungsinputmaske Administrator -->
+  <div id="inhaltAdmin" *ngIf="currentSection === 'formAdmin'">
+
+    <!-- linke Spalte -->
+    <div class="left-column">
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Benutzername:</button>
+        <input class="container-input" [(ngModel)]="usernameA" (input)="checkusernameA()" type="text" placeholder="...">
+        <p id="commentUA" class="container-textcorrect" tabindex="-1">{{ commentUA }}</p>
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* E-Mail-Adresse:</button>
+        <input class="container-input" [(ngModel)]="emailA" (input)="checkemailA()" type="email" placeholder="...">
+        <p id="commentEA" class="container-textcorrect" tabindex="-1">{{ commentEA }}</p>
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Passwort:</button>
+        <input class="container-input" [(ngModel)]="passwordA" (input)="validatePasswords()" type="password" placeholder="...">
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Passwort wiederholen:</button>
+        <input class="container-input" [(ngModel)]="confirmPasswordA" (input)="validatePasswords()" type="password" placeholder="...">
+        <p id="commentPA" class="container-textcorrect" tabindex="-1">{{ commentPA }}</p>
+      </div>
+    </div>
+
+    <!-- mittlere Spalte -->
+    <div class="middle-column">
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Vorname:</button>
+        <input class="container-input" id="inputField11" type="text" placeholder="...">
+      </div>
+
+      <div class="input-wrapper">
+        <button class="container-text" tabindex="-1">* Nachname:</button>
+        <input class="container-input" id="inputField12" type="text" placeholder="...">
+      </div>
+    </div>
+
+    <!-- rechte Spalte -->
+    <div class="right-column">
+      <button class="container-text" tabindex="-1">Profilbild (Optional):</button>
+      <input
+        class="container-input2"
+        id="inputField14"
+        type="file"
+        accept="image/*"
+        (change)="onFileSelectedA($event)"
+      />
+
+      <!-- Bildvorschau -->
+      <img
+        *ngIf="profiletestA"
+        [src]="profiletestA"
+        alt="Profilbild Vorschau"
+        class="image-preview"
+        tabindex="-1"
+      />
+    </div>
+
+    <p id="commentRegisterA" class="container-textcorrect2" tabindex="-1" [class.show]="commentRegisterA">{{ commentRegisterA }}</p>
+    <button class="register-button" (click)="registerA()">Registrieren</button>
+  </div>
+
+  <div class="login-container">
+    <button class="login-text" tabindex="-1" disabled>Sie sind bereits registriert?</button>
+    <div class="login-row">
+      <button class="login-text" tabindex="-1" disabled>Hier geht's zur</button>
+      <button class="login-button" routerLink="/login">Anmeldung</button>
+    </div>
+  </div>
+</div>

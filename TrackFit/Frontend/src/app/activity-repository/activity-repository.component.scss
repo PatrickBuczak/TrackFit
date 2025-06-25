@@ -1,0 +1,239 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 75%; // Container-Breite
+  margin: 80px auto 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.container-gap {
+  margin-top: 120px;
+}
+
+.container-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}
+
+.container-text-profilbild {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  margin-bottom: 80px;
+}
+
+.container-text2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}
+
+.container-text3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}
+
+.container-text4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(238, 111, 0, 0);
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}
+
+.container-text5 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  text-align: center;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead th {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 5px;
+  line-height: 1.2; /* Zeilenabstand */
+}
+
+thead th[rowspan="2"] {
+  vertical-align: middle; /* Vertikale Zentrierung für einzeilige Spalten */
+}
+
+.container-text3 {
+  font-size: 18px;
+  white-space: nowrap; /* Verhindert Zeilenumbruch innerhalb der Zelle */
+}
+
+
+tbody td {
+  text-align: center;
+  padding: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* Abstand zwischen Buttons */
+}
+
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  max-width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.container2 > div {
+  flex: 1;
+}
+
+.container-aktivitaeten{
+  font-family: sans-serif; /* sans-serif erzwingen */
+  margin-top: 112px;
+
+}
+
+.filter-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.filter-input {
+  width: 380px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: 3px solid #12142B;
+  background: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: sans-serif; /* sans-serif erzwingen */
+  cursor: pointer;
+}
+
+.filter-input:hover {
+  background-color: white;
+  color: black;
+  border-color: #EE6F00;
+}
+
+
+.container-input {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: white;
+  background: white;
+  cursor: default;
+  padding: 12px 40px;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  font-family: sans-serif; /* sans-serif erzwingen */
+}
+
+  button {
+    background-color: transparent; /* Ensure no background color */
+    border: none; /* No border around button */
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Ensure the button itself doesn't change on hover */
+    &:hover {
+      background-color: transparent; /* No hover background */
+    }
+
+    /* Style the SVG inside the button */
+    svg {
+      width: 28px; /* Set size of the SVG */
+      height: 28px;
+      stroke: white; /* Default line color */
+      stroke-width: 8; /* Set wider stroke */
+      fill: none; /* Ensure no fill inside the SVG */
+
+      /* Hover effect for the SVG */
+      &:hover {
+        stroke: #EE6F00; /* Change line color to orange on hover */
+      }
+    }
+  }
+
+.button-container {
+  display: flex;
+  gap: 8px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+}
+
+.column-wide {
+  min-width: 200px; /* Mindestbreite */
+  max-width: 300px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+.column-narrow {
+  min-width: 84px; /* Mindestbreite */
+  max-width: 84px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+.column-left {
+  min-width: 32px; /* Mindestbreite */
+  max-width: 32px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}

@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="container-text6">
+    Höhenvisualisierung für <span class="text6-highlight">{{ activityName }}</span> am {{ activityDate }}:
+  </div>
+
+  <p></p>
+  <div class="chart-container">
+    <canvas id="elevationChart"></canvas>
+
+    <!-- Tooltip -->
+    <div id="custom-tooltip" class="tooltip" style="opacity: 0; position: absolute; display: none;">
+      <div class="tooltip-content">
+        <!-- Header Section mit Aktivitätsname und Datum-->
+        <div class="tooltip-header">
+          <div class="tooltip-activity-name"></div> <!-- Aktivitätsname -->
+          <div class="tooltip-activity-date"></div> <!-- "am" und Datum -->
+        </div>
+
+        <!-- kombinierte Reihenpaare (oben: Wert, unten: Beschriftung) in 3 Spalten angeordnet -->
+        <div class="tooltip-row">
+          <div class="tooltip-column">
+            <div class="tooltip-value"></div> <!-- Aktivitätstyp -->
+            <div class="tooltip-label">Aktivitätstyp</div>
+            <div class="tooltip-value"></div> <!-- Durchschnittsgeschwindigkeit -->
+            <div class="tooltip-label">⌀ Geschwindigkeit</div>
+          </div>
+          <div class="tooltip-column">
+            <div class="tooltip-value"></div> <!-- Gesamtdauer -->
+            <div class="tooltip-label">Gesamtdauer</div>
+            <div class="tooltip-value"></div> <!-- Erklommene Höhe -->
+            <div class="tooltip-label">Erklommene Höhe</div>
+          </div>
+          <div class="tooltip-column">
+            <div class="tooltip-value"></div> <!-- Gesamtdistanz -->
+            <div class="tooltip-label">Gesamtdistanz</div>
+            <div class="tooltip-value"></div> <!-- Kalorienverbrauch -->
+            <div class="tooltip-label">Kalorienverbrauch</div>
+          </div>
+        </div>
+
+        <!-- untere Spalten für Zeit und Höhe -->
+        <div class="tooltip-row bottom-row">
+          <div class="tooltip-column">
+            <div class="tooltip-value"></div> <!-- Zeit -->
+            <div class="tooltip-label">Zeit</div>
+          </div>
+
+          <div class="tooltip-column">
+            <div class="tooltip-value"></div> <!-- Höhe -->
+            <div class="tooltip-label">Höhe</div>
+          </div>
+
+          <div class="tooltip-column">
+            <div class="tooltip-value">{{ likesCount }}</div> <!-- Anzahl der Likes -->
+            <div class="tooltip-label">Likes</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+    <button class="return-button" (click)="backnavigate()">Zurück</button>
+</div>

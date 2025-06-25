@@ -1,0 +1,350 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 75%; // Container-Breite
+  margin: 100px auto 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.container-gap {
+  margin-top: 120px;
+}
+
+// USER-INFO
+
+.container-userinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5vw;
+}
+
+// Spalten
+.left-column,
+.right-column {
+  width: 20vw; /* Feste Breite */
+}
+
+.left-column {
+  flex: 2; // 1. und 2. Spalte sind breiter
+}
+
+.right-column {
+  flex: 1; // rechte Spalte schmaler
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 0; //verschoben zur Designanpassung-5.2vw
+}
+
+//User-Info-Paare
+.text-row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 16px; /* Abstand zwischen Bezeichnung und Infoinput*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px
+}
+
+.container-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+.container-text-profilbild {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  margin-bottom: 48px;
+  font-family: sans-serif;
+}
+
+.container-text3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+.container-text4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(238, 111, 0, 0);
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+}
+
+
+//Überschriften-Styling
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+// AKTIVITÄTEN-LISTE:
+
+//Filter-Eingabefeld
+.filter-input {
+  width: 20%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: 3px solid #12142B;
+  background: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: sans-serif; /* sans-serif erzwingen */
+  cursor: pointer;
+}
+
+.filter-input:hover {
+  background-color: white;
+  color: black;
+  border-color: #EE6F00;
+}
+
+//Hinweis-Text
+.filter-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  border: 1px solid red;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+thead {
+  border-bottom: 2px solid red;
+}
+
+//Tabellenspalten-Fixes
+
+.column-wide {
+  min-width: 200px; /* Mindestbreite */
+  max-width: 300px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+.column-narrow {
+  min-width: 96px; /* Mindestbreite */
+  max-width: 96px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+.column-left {
+  min-width: 32px; /* Mindestbreite */
+  max-width: 32px; /* Optional: Maximale Breite */
+  white-space: nowrap; /* Zeilenumbruch verhindern */
+}
+
+
+
+// AKTIVITÄTEN-ZUSAMMENFASSUNG:
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  max-width: 80%;
+  margin: -32px auto;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.container2 > div {
+  flex: 1;
+}
+
+.container-aktivitaeten{
+  margin-top: 160px;
+  text-align: center;
+  font-family: sans-serif; /* sans-serif erzwingen */
+}
+
+//Werte
+.container-text5 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #EE6F00;
+  border: none;
+  background: none;
+  cursor: default;
+  font-family: sans-serif;
+  margin-top: 48px;
+}
+
+//Bezeichnungen
+.container-text2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+//Visualisierungs-Buttons
+button {
+  background-color: transparent; /* Ensure no background color */
+  border: none; /* No border around button */
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Ensure the button itself doesn't change on hover */
+  &:hover {
+    background-color: transparent; /* No hover background */
+  }
+
+  // SVG-Icons
+  svg {
+    width: 28px; /* Set size of the SVG */
+    height: 28px;
+    stroke: white; /* Default line color */
+    stroke-width: 8; /* Set wider stroke */
+    fill: none; /* Ensure no fill inside the SVG */
+
+    /* Hover effect for the SVG */
+    &:hover {
+      stroke: orange; /* Change line color to orange on hover */
+    }
+  }
+}
+
+
+.button-container {
+  display: flex;
+  gap: 8px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+}
+
+
+
+
+//RETURN-BUTTON
+.return-button {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #12142B;
+  cursor: pointer;
+  width: 240px;
+  padding: 24px 36px;
+  border-radius: 8px;
+  margin: 120px auto;
+}
+
+.return-button:hover {
+  background-color: #EE6F00;
+  color: white;
+  border-color: white;
+}
+
+
+/* Container für die Freundesliste */
+.friends-list-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background: transparent; /* Transparenter Hintergrund */
+  border-radius: 10px;
+  color: white;
+  font-family: sans-serif;
+  text-align: center; /* Zentriert den Container-Inhalt */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Liste der Freunde */
+  ul {
+    list-style: disc; /* Aktiviert Aufzählungspunkte */
+    padding-left: 20px; /* Platz für die Aufzählungspunkte */
+    margin: 0;
+    text-align: left; /* Links ausgerichteter Text innerhalb der Liste */
+    width: 100%; /* Füllt den Container */
+    max-width: 400px; /* Begrenzte Breite für die Liste */
+    margin-top: 12px;
+  }
+
+  /* Einzelne Freundes-Einträge */
+  li {
+    display: list-item; /* Beibehaltung der Aufzählung */
+    background: #1F2136;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px; /* Abstand zwischen Einträgen */
+    text-align: left; /* Links ausgerichteter Text */
+  }
+
+  /* Kein Freund vorhanden */
+  p {
+    font-size: 16px;
+    color: #AAAAAA;
+    text-align: center;
+  }
+
+  /* Freunde-Namen */
+  li span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: left; /* Links ausgerichteter Text */
+  }
+}
+
+
+

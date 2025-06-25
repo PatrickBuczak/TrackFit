@@ -1,0 +1,65 @@
+<div class="container-aktivitaeten">
+  <!-- Container für das Label dieser Componente "Leaderboard -->
+  <div class="container">
+    <div class="container-text6">Leaderboard:</div>
+  </div>
+
+  <!-- Container für den Filtereingabebereich -->
+  <div class="filter-center-container">
+    <!-- Eingabefeld zum Filtern nach Benutzern -->
+    <!-- Durch (click)="checkSession()" wird die Methode aufgerufen, um durch die Interaktion mit dem Client durch den Benutzer die Gültigkeit des JWTTokens zu verlänger -->
+    <!-- Existiert kein JWTToken mehr auf den Namen des Benutzers, so wird dieser darüber informiert, dass die Session abgelaufen und eine Neuanmeldung notwendig ist -->
+    <!-- Man wird zur Anmeldung navigiert -->
+    <input class="filter-input" id="inputField1" type="text" placeholder="Filtere nach Benutzernamen" [(ngModel)]="searchText" />
+    <!-- Hinweis zur Sortierung der Spalten -->
+    <div class="container-text2">Hinweis: Durch einen Klick auf die Spaltennamen können Sie die Spalten auf- oder absteigend sortieren.</div>
+  </div>
+
+  <!-- Tabelle zur Anzeige der Leaderboard-Daten -->
+  <table>
+    <!-- <thead> Kopfbereich einer Tabelle -->
+    <thead>
+    <!-- <tr> Tabellenkopfzeile -->
+    <tr>
+      <!-- Spaltenüberschriften mit Klick-Event zum Sortieren -->
+      <!-- Durch (click)="sortData('XXX')" wird sortData() enstprechend einer spaltenid aus der .ts aufgerufen, wodurch es möglich ist die Spalte der Tabelle gemäß ihrer Inhalte zu filtern-->
+      <!-- Tabellenkopfzellen -->
+      <th class="container-text3 username-column" (click)="sortData('username')">Benutzername</th>
+      <th class="container-text3" rowspan=2 (click)="sortData('activityCount')">Durchgeführte<br>Aktivitäten</th>
+      <th class="container-text3" rowspan=2 (click)="sortData('totalDurationInHours')">Gesamtdauer<br>in h</th>
+      <th class="container-text3" rowspan=2 (click)="sortData('TotalDistanceInKm')">Gesamtdistanz<br>in km</th>
+      <th class="container-text3" rowspan=2 (click)="sortData('TotalCaloriesBurned')">Kalorienverbrauch<br>in Kilokalorien</th>
+      <th class="container-text3" rowspan=2 (click)="sortData('TotalAltitudeInMeters')">Erklommene<br>Höhe in m</th>
+      <th class="container-text3" rowspan=3 (click)="sortData('AverageSpeedInKmh')">Durchschnitts-<br>geschwindigkeit aller<br>Aktivitäten in km/h</th>
+      <th class="container-text3" rowspan=3 (click)="sortData('FastestSpeedInKmh')">Höchste Durchschnitts-<br>geschwindigkeit in<br>einer Aktivität in km/h</th>
+      <th class="container-text3" rowspan=2 (click)="sortData('TotalLikes')">Gesamte<br>Likes</th>
+    </tr>
+    </thead>
+    <!-- <tbody> Hauptinhaltbereich einer Tabelle -->
+    <tbody>
+    <!-- Zeilen für die gefilterten Daten -->
+    <!-- <tr> Tabellenhauptinhaltszeilen -->
+    <tr *ngFor="let item of filteredData(); let i = index">
+      <!-- <tr *ngFor="let item of filteredData()"> Erstellt eine neue Tabellenzeile für jedes Element in der filteredData() aus der .ts -->
+      <!-- durch item.XXX werden die jeweiligen Werte aus dem entsprechenden item-Element ausgegeben -->
+      <!-- <tr> Tabellenhauptinhaltszellen -->
+      <td class="container-text">{{ item.username }}</td>
+      <td class="container-text">{{ item.activityCount }}</td>
+      <td class="container-text">{{ item.totalDurationInHours }}</td>
+      <td class="container-text">{{ item.TotalDistanceInKm }}</td>
+      <td class="container-text">{{ item.TotalCaloriesBurned }}</td>
+      <td class="container-text">{{ item.TotalAltitudeInMeters }}</td>
+      <td class="container-text">{{ item.AverageSpeedInKmh }}</td>
+      <td class="container-text">{{ item.FastestSpeedInKmh }}</td>
+      <td class="container-text">{{ item.TotalLikes }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Abstandshalter -->
+<div class="container-gap"></div>
+<br>
+<br>
+<br>
+<!-- Komponente wird mit eingebunden -->
+<app-navbar></app-navbar>

@@ -1,0 +1,415 @@
+/* Setzt die Schriftart für den gesamten Text auf sans-serif */
+* {
+  font-family: sans-serif;
+}
+
+:host {
+  user-select: none; /* Verhindert die Markierung von Text */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 75%; // Container-Breite
+  margin: 0 auto 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.filter-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+
+/* Container für den gesamten Feed */
+.activity-feed-container {
+  margin: 24px auto 10px auto; /* Abstand zum unteren Rand auf 50px erhöhen */
+  padding: 20px;
+  max-width: 1524px;
+  background-color: transparent; /* Hintergrund entfernen */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.container-aktivitaeten {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px; /* Reduziert den Abstand zwischen den Beiträgen */
+}
+
+/* Aktivitätsboxen */
+.activity-item {
+  background-color: rgba(44, 47, 62, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 520px;
+  height: 240px;
+  margin: 10px; /* Reduziert den Abstand zwischen den einzelnen Aktivitätsboxen */
+  cursor: pointer;
+}
+
+
+.activity-item:hover {
+  background-color: rgba(58, 62, 73, 0.9);
+}
+
+/* Header (Profilbild, Benutzername und Markierung in einer Zeile) */
+.profile-mark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+
+.marker {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.marker-green {
+  background-color: #4CAF50; /* Für Freunde sichtbar */
+}
+
+.marker-yellow {
+  background-color: #FFEB3B; /* Nur für den Ersteller sichtbar */
+}
+
+.marker-blue {
+  background-color: #1b1e3c; /* für alle sichtbar */
+}
+
+.green-circle-buttonB {
+  width: 20px;
+  height: 20px;
+  background-color: #4CAF50;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.yellow-circle-buttonB {
+  width: 20px;
+  height: 20px;
+  background-color: #FFEB3B;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.marker-info-darkblue {
+  width: 20px;
+  height: 20px;
+  background-color: #1b1e3c;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Body (Aktivitätsname und Datum) */
+.activity-info {
+  text-align: center;
+  color: #EE6F00;
+  font-size: 18px; /* Größere Schriftgröße für Aktivitätsname und Datum */
+  margin-bottom: 10px;
+}
+
+.activity-name {
+  font-size: 24px; /* Aktivitätsname größer */
+  font-weight: bold;
+}
+
+.activity-date {
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.activity-item {
+  background-color: rgba(44, 47, 62, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative; /* Wichtige Voraussetzung für absolute Positionierung der Kinder */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Inhalte beginnen oben */
+  width: 520px;
+  height: 240px;
+  margin: 10px;
+}
+
+.activity-footer {
+  position: absolute; /* Setzt den Footer unabhängig von anderen Inhalten */
+  bottom: 10px; /* Abstand vom unteren Rand */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+
+}
+
+
+/* Weitere Infos Button */
+.info-button {
+  background-color: #EE6F00; /* Orange für den Button */
+  color: white;
+  padding: 15px 30px; /* Größerer Button */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: #D55C00; /* Dunkleres Orange bei Hover */
+}
+
+.details {
+  display: grid !important; /* Erzwingt Grid-Darstellung */
+  grid-template-columns: repeat(3, 1fr); /* Drei gleich große Spalten */
+  gap: 20px; /* Abstand zwischen den Spalten */
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  color: #EE6F00;
+  font-size: 14px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+
+
+
+.details.show {
+  display: grid; /* Grid bleibt aktiv */
+}
+
+.details-column {
+  align-items: center;
+  justify-content: center;
+}
+
+.detail {
+  text-align: center; /* Zentriert die Werte und Beschriftungen */
+  margin-bottom: 32px; /* Abstand zwischen den Paaren */
+  flex-direction: column;
+  gap: 5px;
+  display: flex;
+}
+
+.detail-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #EE6F00;
+}
+
+.detail-label {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+
+
+
+/* Like-Button */
+.like-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.like-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.like-button svg {
+  width: 28px;
+  height: 28px;
+  transition: fill 0.3s ease;
+}
+
+.liked path {
+  fill: #EE6F00; /* Ausgefüllter Button (Orange) wenn geliked oder eigene Aktivität */
+}
+
+.not-liked path {
+  fill: transparent; /* Leerer Button (transparent) wenn nicht geliked */
+  stroke: #EE6F00; /* Umrandung in Orange für den nicht geliked Button */
+  stroke-width: 2px; /* Strichstärke für die Umrandung */
+}
+
+/* Like-Count */
+.like-count {
+  font-size: 14px;
+  color: #ff9f00;
+  margin-left: 10px;
+}
+
+/* Stil für den Hinweis oben */
+.info-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Zentrale Ausrichtung der Texte */
+  align-items: center;
+  width: 100%;
+  margin-top: 112px; /* Abstand zum oberen Rand verringern */
+  box-sizing: border-box;
+  background: none;
+}
+
+.markierungen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: transparent; /* Ensure no conflicting background */
+}
+
+.container-text2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  text-align: center;
+}
+
+.container-text6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  background: none;
+  cursor: default;
+  text-align: center;
+}
+
+
+.marker {
+  position: absolute; /* Position relative to the activity-item */
+  top: 16px; /* Distance from the top */
+  right: 16px; /* Distance from the left */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.marker-green {
+  background-color: #02bc59; /* Green for friends */
+}
+
+.marker-yellow {
+  background-color: #ffd900; /* Yellow for creator */
+
+}
+
+.marker-blue {
+  background-color: #1b1e3c; /* Yellow for creator */
+
+}
+
+
+.marker-info-green {
+  width: 20px;
+  height: 20px;
+  background-color: #02bc59;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.marker-info-yellow {
+  width: 20px;
+  height: 20px;
+  background-color: #ffd900;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+/* Anpassungen für Tablets */
+@media (max-width: 1024px) {
+  .container-aktivitaeten {
+    grid-template-columns: repeat(2, 1fr); /* Zwei Spalten auf Tablets */
+  }
+}
+
+/* Anpassungen für Handys */
+@media (max-width: 768px) {
+  .container-aktivitaeten {
+    grid-template-columns: 1fr; /* Eine Spalte für Handys */
+  }
+
+  .activity-item {
+    width: 100%; /* Flexibel auf 100% Breite bei kleineren Bildschirmen */
+  }
+}
+
+

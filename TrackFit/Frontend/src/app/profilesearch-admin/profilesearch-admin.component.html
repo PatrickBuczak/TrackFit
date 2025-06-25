@@ -1,0 +1,41 @@
+<div class="container-aktivitaeten">
+  <!-- Container für das Label dieser Componente "Leaderboard -->
+  <div class="container">
+    <div class="container-text6">Benutzersuche:</div>
+  </div>
+
+  <div class="filter-center-container">
+    <input class="container-input" id="inputField1" type="text" placeholder="Filtere nach Benutzernamen" [(ngModel)]="searchText" />
+    <div class="container-text">Durch einen Klick auf den Benutzernamen werden Sie zur entsprechenden Profilseite navigiert.</div>
+    <p></p>
+
+  <!-- Blöcke mit 64 Einträgen anzeigen, abhängig von blockCount (berechnet in der TS - beginnend mit 1 -->
+  <div *ngFor="let blockIndex of [].constructor(blockCount); let i = index">
+    <table>
+      <thead>
+      <tr>
+        <th class="container-text2" colspan="8" (click)="sortData('username')">Benutzername</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Struktur für Blöcke mit 64 Einträgen: 8 Spalten mit 8 Zeilen -->
+      <tr *ngFor="let columnIndex of [0, 1, 2, 3, 4, 5, 6, 7]">
+        <td class="column-block">
+          <div *ngFor="let item of filteredData() | slice:((i * 64) + (columnIndex * 8)):((i * 64) + (columnIndex * 8) + 8)" class="table-row">
+            <button class="router-button" (click)="navigate(item.username)">
+              {{ item.username }}
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <p></p>
+  </div>
+  <div class="container-abschluss">
+  <p></p>
+    </div>
+  <br><br><br>
+</div>
+</div>
+<app-navbar-admin></app-navbar-admin>

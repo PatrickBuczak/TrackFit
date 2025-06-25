@@ -1,0 +1,57 @@
+##Führe die Kommentare Schritt für Schritt durch
+##Maven -> Lifecycle: clean
+##Maven -> Lifecycle: install
+##Ab hier Terminal von Trackfit
+
+version: '3'
+services:
+  backend:
+    ##docker build -t backend .\Backend ##Erstellt das Image
+    ##docker save backend -o backend.tar ##Speichert das Image als .tar
+    ##docker load -i backend.tar ##Erstellt ein Image, wenn nicht bereits vorhanden, gemäß der .tar
+    image: backend
+
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/trackfit
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_MAIL_HOST=mx.freenet.de
+      - SPRING_MAIL_PORT=587
+      - SPRING_MAIL_USERNAME=Trackfit@freenet.de
+      - SPRING_MAIL_PASSWORD=Sep2024!
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=true
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=true
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_REQUIRED=true
+      - SPRING_MAIL_DEFAULT_ENCODING=UTF-8
+      - SPRING_MAIL_PROPERTIES_MAIL_DEBUG=true
+    depends_on:
+      - db
+
+  frontend:
+    ##docker build -t frontend .\Frontend ##Erstellt das Image
+    ##docker save frontend -o frontend.tar ##Speichert das Image als .tar
+    ##docker load -i frontend.tar ##Erstellt ein Image, wenn nicht bereits vorhanden, gemäß der .tar
+    image: frontend
+
+
+    ports:
+      - "4200:4200"
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=trackfit
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
+##Docker-Image überprüfen
+##docker images
+
+##Starten Sie den Docker-Container basierend auf den bereits erstellten Images backend und frontend und erstellen Sie ein Image der Datenbank
+##docker compose up
